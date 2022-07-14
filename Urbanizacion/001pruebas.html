@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="001pruebasjs.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+
+<script>
+
+var items_lstrge = localStorage.getItem(001);
+console.log(items_lstrge);
+var data001=new Array();
+data001.push(items_lstrge);
+console.log(data001);
+
+items_lstrge[0];
+items_lstrge[1];
+items_lstrge[2];
+items_lstrge[3];
+items_lstrge[4];
+
+console.log(items_lstrge[0]);
+// (B) DUMMY ARRAY
+var data = ["doge", "cate", "birb", "doggo", "moon moon", "awkward seal"];
+
+// (C) CREATE HTML TABLE
+// (C1) HTML TABLE STRING
+var myTable = "<table ><tr>";
+
+// (C2) LOOP THROUGH ARRAY & GENERATE ROWS-CELLS
+var perrow = 2; // 2 CELLS PER ROW
+data001.forEach((value, i) => {
+  // "NORMAL" CELL
+  myTable += `<td>${value}</td>`;
+ 
+  // CLICK ON CELL TO DO SOMETHING
+  // myTable += `<td onclick="FUNCTION()">${value}</td>`;
+ 
+  // TO PASS IN A RUNNING NUMBER OR PARAMETER
+   myTable += `<td onclick="FUNCTION(${i})">${value}</td>`;
+ 
+  // BREAK INTO NEXT ROW
+  var next = i + 1;
+  if (next%perrow==0 && next!=data.length) { myTable += "</tr><tr>"; }
+});
+
+// (C3) CLOSE THE TABLE STRING
+myTable += "</tr></table>";
+ 
+// (D) ATTACH HTML TO CONTAINER
+document.getElementById("container").innerHTML = myTable;
+</script>
+</body>
+</html>

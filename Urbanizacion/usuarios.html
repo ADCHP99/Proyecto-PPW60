@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="menu_centraljs.js"></script>
+    <title>Document</title>
+
+</head>
+<body>
+    <pre id="ing_users"></pre>
+    <pre id="users"></pre>
+    <pre id="pruebas"></pre>
+    <h3 id="ing_users"></h3>
+
+
+
+<script>
+let arr = ["Jack", "John", "James"];
+
+document.getElementById("ing_users").innerHTML = arr;
+
+var items_lstrge = localStorage.getItem(001);
+
+document.getElementById("users").innerHTML = items_lstrge;
+
+
+let arregloOriginal = ["PHP", "JavaScript", "Go", "Rust", "Java", "C", "CSS", "Python"],
+	arregloDeArreglos = []; // Aquí almacenamos los nuevos arreglos
+console.log("Arreglo original: ", arregloOriginal);
+const LONGITUD_PEDAZOS = 1; // Partir en arreglo de 3
+for (let i = 0; i < arregloOriginal.length; i += LONGITUD_PEDAZOS) {
+	let pedazo = arregloOriginal.slice(i, i + LONGITUD_PEDAZOS);
+	arregloDeArreglos.push(pedazo);
+}
+console.log("Arreglo de arreglos: ", arregloDeArreglos);
+document.getElementById("pruebas").innerHTML = arregloDeArreglos;
+
+
+
+</script>
+</body>
+</html>
